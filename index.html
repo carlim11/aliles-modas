@@ -1,924 +1,845 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Moda feminina Y2K, peças atemporais, tecidos de qualidade e acessórios dourados com preços acessíveis.">
-    <title>Aliles modas | Fashion Store</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
-
-    <style>
-        :root {
-            --cherry: #a80f2d;
-            --red: #d7193f;
-            --black: #171414;
-            --cream: #fff8f3;
-            --pink: #f5dfe3;
-            --gold: #c69a45;
-            --white: #ffffff;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background: var(--cream);
-            color: var(--black);
-            font-family: 'DM Sans', sans-serif;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        button {
-            font: inherit;
-            cursor: pointer;
-        }
-
-        /* BARRA SUPERIOR */
-
-        .announcement {
-            background: var(--cherry);
-            color: white;
-            text-align: center;
-            padding: 11px 15px;
-            font-size: 10px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        /* CABEÇALHO */
-
-        header {
-            background: var(--cream);
-            padding: 22px 6%;
-            border-bottom: 1px solid #e9dcd5;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 25px;
-            position: sticky;
-            top: 0;
-            z-index: 10;
-        }
-
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 30px;
-            font-weight: 700;
-            letter-spacing: -1.5px;
-            white-space: nowrap;
-        }
-
-        .logo span {
-            color: var(--cherry);
-        }
-
-        nav {
-            display: flex;
-            gap: 25px;
-            align-items: center;
-        }
-
-        nav a {
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: color .2s;
-        }
-
-        nav a:hover {
-            color: var(--red);
-        }
-
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 18px;
-            font-size: 12px;
-        }
-
-        .cart-link {
-            border: 1px solid var(--black);
-            border-radius: 30px;
-            padding: 10px 15px;
-            white-space: nowrap;
-        }
-
-        /* CAPA */
-
-        .hero {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            min-height: 560px;
-            background: var(--pink);
-        }
-
-        .hero-content {
-            padding: 75px 10%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
-        }
-
-        .eyebrow {
-            font-size: 10px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: var(--cherry);
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(43px, 5.5vw, 76px);
-            line-height: 1.02;
-            font-weight: 500;
-            margin-bottom: 24px;
-        }
-
-        .hero h1 em {
-            color: var(--cherry);
-            font-weight: 500;
-        }
-
-        .hero p {
-            font-size: 13px;
-            line-height: 1.9;
-            max-width: 370px;
-            color: #514344;
-            margin-bottom: 30px;
-        }
-
-        .button-primary {
-            display: inline-block;
-            background: var(--black);
-            color: white;
-            padding: 16px 25px;
-            font-size: 10px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            border: 1px solid var(--black);
-            transition: .25s;
-        }
-
-        .button-primary:hover {
-            background: var(--cherry);
-            border-color: var(--cherry);
-        }
-
-        .hero-image {
-            min-height: 450px;
-            background:
-                linear-gradient(0deg, rgba(30, 0, 10, .12), rgba(30, 0, 10, 0)),
-                url('https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1200&q=85')
-                center 35% / cover;
-            position: relative;
-        }
-
-        .hero-sticker {
-            position: absolute;
-            right: 8%;
-            bottom: 8%;
-            width: 105px;
-            height: 105px;
-            border-radius: 50%;
-            background: var(--cherry);
-            color: white;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            transform: rotate(10deg);
-            font-size: 10px;
-            letter-spacing: 1px;
-        }
-
-        .hero-sticker strong {
-            font-family: 'Playfair Display', serif;
-            font-size: 23px;
-        }
-
-        /* FAIXA */
-
-        .ticker {
-            background: var(--black);
-            color: white;
-            padding: 17px 10px;
-            text-align: center;
-            font-size: 10px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            line-height: 2;
-        }
-
-        .ticker span {
-            color: #e6b95f;
-            margin: 0 12px;
-        }
-
-        /* SEÇÕES */
-
-        .section {
-            padding: 80px 6%;
-        }
-
-        .section-heading {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            gap: 20px;
-            margin-bottom: 35px;
-        }
-
-        .section-heading h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(30px, 4vw, 44px);
-            font-weight: 500;
-        }
-
-        .section-heading p {
-            font-size: 11px;
-            color: #77706e;
-            margin-top: 9px;
-        }
-
-        .text-link {
-            font-size: 10px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border-bottom: 1px solid var(--black);
-            padding-bottom: 5px;
-            white-space: nowrap;
-        }
-
-        /* CATEGORIAS */
-
-        .categories {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        .category-card {
-            min-height: 330px;
-            position: relative;
-            overflow: hidden;
-            background: var(--pink);
-        }
-
-        .category-card img {
-            width: 100%;
-            height: 330px;
-            object-fit: cover;
-            display: block;
-            transition: transform .5s;
-        }
-
-        .category-card:hover img {
-            transform: scale(1.04);
-        }
-
-        .category-label {
-            position: absolute;
-            bottom: 15px;
-            left: 15px;
-            right: 15px;
-            background: rgba(255, 248, 243, .94);
-            padding: 18px;
-        }
-
-        .category-label h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 24px;
-            font-weight: 500;
-            margin-bottom: 5px;
-        }
-
-        .category-label p {
-            font-size: 10px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* PRODUTOS */
-
-        .products-section {
-            background: #fff;
-        }
-
-        .filters {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 30px;
-        }
-
-        .filter-btn {
-            border: 1px solid #d8ccc6;
-            background: transparent;
-            border-radius: 30px;
-            padding: 10px 17px;
-            font-size: 10px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .filter-btn.active,
-        .filter-btn:hover {
-            background: var(--black);
-            border-color: var(--black);
-            color: white;
-        }
-
-        .products {
-            display: grid;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
-            gap: 30px 18px;
-        }
-
-        .product-card {
-            min-width: 0;
-        }
-
-        .product-image {
-            position: relative;
-            background: #f2e7e2;
-            overflow: hidden;
-        }
-
-        .product-image img {
-            width: 100%;
-            aspect-ratio: 3 / 4;
-            object-fit: cover;
-            display: block;
-            transition: transform .4s;
-        }
-
-        .product-card:hover .product-image img {
-            transform: scale(1.035);
-        }
-
-        .product-tag {
-            position: absolute;
-            top: 12px;
-            left: 12px;
-            background: var(--cream);
-            color: var(--cherry);
-            padding: 7px 10px;
-            font-size: 9px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .product-info {
-            padding-top: 15px;
-        }
-
-        .product-category {
-            color: #8b7d77;
-            font-size: 9px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-        }
-
-        .product-info h3 {
-            font-size: 13px;
-            font-weight: 500;
-            margin: 8px 0;
-        }
-
-        .product-material {
-            color: #77706e;
-            font-size: 10px;
-            margin-bottom: 12px;
-        }
-
-        .price {
-            font-size: 14px;
-            font-weight: 700;
-        }
-
-        .installment {
-            font-size: 10px;
-            color: #77706e;
-            margin-top: 5px;
-        }
-
-        .add-button {
-            width: 100%;
-            margin-top: 15px;
-            padding: 12px 5px;
-            border: 1px solid var(--black);
-            background: transparent;
-            color: var(--black);
-            font-size: 9px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            transition: .2s;
-        }
-
-        .add-button:hover {
-            background: var(--black);
-            color: white;
-        }
-
-        /* BANNER */
-
-        .editorial {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            background: var(--cherry);
-            color: white;
-            min-height: 400px;
-        }
-
-        .editorial-image {
-            background:
-                url('https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1000&q=85')
-                center 35% / cover;
-            min-height: 350px;
-        }
-
-        .editorial-content {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            justify-content: center;
-            padding: 55px 10%;
-        }
-
-        .editorial-content .eyebrow {
-            color: #f6cf8b;
-        }
-
-        .editorial-content h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(35px, 4vw, 53px);
-            font-weight: 500;
-            line-height: 1.1;
-            margin-bottom: 20px;
-        }
-
-        .editorial-content p {
-            max-width: 350px;
-            font-size: 12px;
-            line-height: 1.9;
-            margin-bottom: 25px;
-            color: #f9e5e5;
-        }
-
-        .button-light {
-            border: 1px solid white;
-            padding: 14px 22px;
-            color: white;
-            text-transform: uppercase;
-            font-size: 10px;
-            letter-spacing: 1.5px;
-        }
-
-        .button-light:hover {
-            background: white;
-            color: var(--cherry);
-        }
-
-        /* QUALIDADE */
-
-        .quality-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 25px;
-            text-align: center;
-        }
-
-        .quality-item .quality-icon {
-            font-size: 27px;
-            color: var(--gold);
-            margin-bottom: 15px;
-        }
-
-        .quality-item h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 19px;
-            font-weight: 500;
-            margin-bottom: 10px;
-        }
-
-        .quality-item p {
-            font-size: 11px;
-            line-height: 1.8;
-            color: #77706e;
-        }
-
-        /* NEWSLETTER */
-
-        .newsletter {
-            background: var(--pink);
-            padding: 65px 20px;
-            text-align: center;
-        }
-
-        .newsletter h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(30px, 4vw, 42px);
-            font-weight: 500;
-            margin-bottom: 12px;
-        }
-
-        .newsletter p {
-            font-size: 12px;
-            color: #655454;
-            margin-bottom: 25px;
-            line-height: 1.7;
-        }
-
-        .newsletter-form {
-            display: flex;
-            max-width: 440px;
-            margin: auto;
-        }
-
-        .newsletter-form input {
-            flex: 1;
-            min-width: 0;
-            padding: 15px;
-            border: 1px solid #d8c4c5;
-            background: white;
-            outline: none;
-            font: inherit;
-            font-size: 12px;
-        }
-
-        .newsletter-form button {
-            background: var(--cherry);
-            color: white;
-            border: none;
-            padding: 0 20px;
-            font-size: 10px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* RODAPÉ */
-
-        footer {
-            background: var(--black);
-            color: white;
-            padding: 55px 6% 25px;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr 1fr;
-            gap: 35px;
-            margin-bottom: 45px;
-        }
-
-        .footer-brand .logo {
-            display: inline-block;
-            margin-bottom: 15px;
-        }
-
-        .footer-brand p {
-            font-size: 11px;
-            color: #bdb3b0;
-            max-width: 260px;
-            line-height: 1.9;
-        }
-
-        .footer-column h4 {
-            font-size: 10px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 18px;
-        }
-
-        .footer-column a {
-            display: block;
-            font-size: 11px;
-            color: #bdb3b0;
-            margin-bottom: 12px;
-        }
-
-        .footer-column a:hover {
-            color: white;
-        }
-
-        .copyright {
-            border-top: 1px solid #373130;
-            padding-top: 22px;
-            text-align: center;
-            color: #a79b98;
-            font-size: 10px;
-            line-height: 1.8;
-        }
-
-        /* RESPONSIVIDADE */
-
-        @media (max-width: 900px) {
-            header {
-                flex-wrap: wrap;
-                padding: 18px 5%;
-            }
-
-            nav {
-                order: 3;
-                width: 100%;
-                justify-content: center;
-                gap: 18px;
-                flex-wrap: wrap;
-            }
-
-            .hero {
-                min-height: 450px;
-            }
-
-            .hero-content {
-                padding: 45px 8%;
-            }
-
-            .products {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-                gap: 25px 14px;
-            }
-
-            .footer-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .category-card,
-            .category-card img {
-                min-height: 250px;
-                height: 250px;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .announcement {
-                font-size: 9px;
-                letter-spacing: 1px;
-            }
-
-            header {
-                gap: 12px;
-            }
-
-            .logo {
-                font-size: 25px;
-            }
-
-            .header-actions {
-                gap: 8px;
-                font-size: 10px;
-            }
-
-            .cart-link {
-                padding: 9px 10px;
-            }
-
-            nav {
-                gap: 15px;
-            }
-
-            nav a {
-                font-size: 9px;
-            }
-
-            .hero {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-content {
-                padding: 55px 7%;
-            }
-
-            .hero-image {
-                min-height: 380px;
-            }
-
-            .section {
-                padding: 55px 5%;
-            }
-
-            .section-heading {
-                align-items: flex-start;
-            }
-
-            .section-heading .text-link {
-                font-size: 9px;
-                margin-top: 12px;
-            }
-
-            .categories {
-                grid-template-columns: 1fr;
-                gap: 15px;
-            }
-
-            .category-card,
-            .category-card img {
-                height: 350px;
-                min-height: 350px;
-            }
-
-            .products {
-                gap: 25px 12px;
-            }
-
-            .product-info h3 {
-                font-size: 12px;
-            }
-
-            .product-material {
-                line-height: 1.6;
-            }
-
-            .editorial {
-                grid-template-columns: 1fr;
-            }
-
-            .editorial-image {
-                min-height: 350px;
-            }
-
-            .editorial-content {
-                padding: 45px 7%;
-            }
-
-            .quality-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 35px 18px;
-            }
-
-            .newsletter-form button {
-                padding: 0 12px;
-                font-size: 9px;
-            }
-
-            .footer-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 30px 20px;
-            }
-
-            .footer-brand {
-                grid-column: 1 / -1;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aliles Modas | Rock Y2K</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --red: #b30d2f;
+    --black: #171515;
+    --cream: #fff8f2;
+    --pink: #f3e3e3;
+    --gold: #c6a05b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    background: var(--cream);
+    color: var(--black);
+    font-family: 'DM Sans', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.announcement {
+    background: var(--red);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+header {
+    padding: 22px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #e8dcd6;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 29px;
+    font-weight: 700;
+}
+
+.logo span { color: var(--red); }
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+}
+
+nav a {
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+nav a:hover { color: var(--red); }
+
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: var(--black);
+    color: white;
+    min-height: 520px;
+}
+
+.hero-content {
+    padding: 65px 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.eyebrow {
+    color: var(--red);
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 5vw, 72px);
+    line-height: 1.02;
+    margin-bottom: 22px;
+}
+
+.hero h1 em {
+    color: #e52c50;
+    font-weight: 500;
+}
+
+.hero p {
+    font-size: 13px;
+    line-height: 1.9;
+    color: #ded4d0;
+    max-width: 370px;
+    margin-bottom: 28px;
+}
+
+.button {
+    display: inline-block;
+    padding: 14px 24px;
+    background: var(--red);
+    color: white;
+    border: 1px solid var(--red);
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: .2s;
+}
+
+.button:hover {
+    background: white;
+    color: var(--black);
+    border-color: white;
+}
+
+.hero-image {
+    min-height: 420px;
+    background:
+      linear-gradient(0deg, rgba(0,0,0,.15), transparent),
+      url('https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1200&q=85')
+      center 35% / cover;
+}
+
+.ticker {
+    background: var(--red);
+    color: white;
+    padding: 16px;
+    text-align: center;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+section { padding: 65px 6%; }
+
+.section-heading { margin-bottom: 30px; }
+
+.section-heading h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px, 4vw, 44px);
+    font-weight: 500;
+}
+
+.section-heading p {
+    font-size: 12px;
+    color: #766c68;
+    margin-top: 8px;
+}
+
+.categories {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.category {
+    position: relative;
+    height: 350px;
+    overflow: hidden;
+    background: var(--pink);
+}
+
+.category img {
+    height: 100%;
+    transition: .4s;
+}
+
+.category:hover img { transform: scale(1.05); }
+
+.category-label {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    right: 12px;
+    background: rgba(255,248,242,.94);
+    padding: 16px;
+}
+
+.category-label h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 23px;
+}
+
+.category-label p {
+    font-size: 10px;
+    margin-top: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.products-section { background: white; }
+
+.filters {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+}
+
+.filter-btn {
+    border: 1px solid #d7cbc4;
+    padding: 10px 16px;
+    border-radius: 30px;
+    background: transparent;
+    cursor: pointer;
+    font-size: 10px;
+    text-transform: uppercase;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background: var(--black);
+    color: white;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 30px 18px;
+}
+
+.product-card { min-width: 0; }
+
+.product-image {
+    aspect-ratio: 3 / 4;
+    position: relative;
+    overflow: hidden;
+    background: #eee5df;
+}
+
+.product-image img {
+    height: 100%;
+    transition: .4s;
+}
+
+.product-card:hover img { transform: scale(1.04); }
+
+.tag {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: var(--cream);
+    color: var(--red);
+    padding: 7px 9px;
+    font-size: 9px;
+    text-transform: uppercase;
+}
+
+.product-info { padding-top: 13px; }
+
+.product-category {
+    font-size: 9px;
+    color: #887a73;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.product-info h3 {
+    font-size: 13px;
+    margin: 7px 0;
+    font-weight: 500;
+}
+
+.material {
+    font-size: 10px;
+    color: #766c68;
+    line-height: 1.7;
+}
+
+.sizes {
+    font-size: 10px;
+    margin: 8px 0;
+}
+
+.price {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.buy {
+    width: 100%;
+    margin-top: 12px;
+    padding: 11px;
+    background: var(--black);
+    color: white;
+    border: 1px solid var(--black);
+    cursor: pointer;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.buy:hover {
+    background: var(--red);
+    border-color: var(--red);
+}
+
+.banner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: var(--red);
+    color: white;
+}
+
+.banner img {
+    height: 100%;
+    min-height: 330px;
+}
+
+.banner-content {
+    padding: 55px 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.banner h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(35px, 4vw, 52px);
+    line-height: 1.1;
+    margin-bottom: 18px;
+}
+
+.banner p {
+    font-size: 12px;
+    line-height: 1.9;
+    margin-bottom: 24px;
+}
+
+.banner .button {
+    border-color: white;
+}
+
+.banner .button:hover {
+    background: white;
+    color: var(--red);
+}
+
+.qualities {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    text-align: center;
+}
+
+.quality { padding: 10px; }
+
+.quality .symbol {
+    font-size: 27px;
+    color: var(--gold);
+    margin-bottom: 12px;
+}
+
+.quality h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.quality p {
+    color: #766c68;
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+.newsletter {
+    background: var(--pink);
+    text-align: center;
+}
+
+.newsletter h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    margin-bottom: 12px;
+}
+
+.newsletter p {
+    font-size: 12px;
+    margin-bottom: 22px;
+}
+
+.newsletter form {
+    display: flex;
+    max-width: 420px;
+    margin: auto;
+}
+
+.newsletter input {
+    min-width: 0;
+    flex: 1;
+    padding: 14px;
+    border: 1px solid #d7c4c4;
+}
+
+.newsletter button {
+    border: 0;
+    background: var(--red);
+    color: white;
+    padding: 0 18px;
+    cursor: pointer;
+}
+
+footer {
+    background: var(--black);
+    color: white;
+    padding: 40px 6%;
+    text-align: center;
+}
+
+footer p {
+    font-size: 11px;
+    color: #c6bbb6;
+    line-height: 2;
+    margin-top: 12px;
+}
+
+#cart-message {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--black);
+    color: white;
+    padding: 15px 20px;
+    font-size: 12px;
+    display: none;
+    z-index: 99;
+}
+
+@media (max-width: 850px) {
+    .products { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .hero { min-height: 420px; }
+    .hero-content { padding: 40px 7%; }
+    .qualities { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+    header { justify-content: center; }
+    nav { justify-content: center; gap: 13px; }
+    nav a { font-size: 9px; }
+    .hero, .banner { grid-template-columns: 1fr; }
+    .hero-content { padding: 50px 7%; }
+    .hero-image { min-height: 370px; }
+    section { padding: 45px 5%; }
+    .categories { grid-template-columns: 1fr; }
+    .category { height: 350px; }
+    .products { gap: 25px 12px; }
+    .product-info h3 { font-size: 12px; }
+    .banner img { min-height: 300px; }
+    .banner-content { padding: 40px 7%; }
+    .newsletter form { flex-direction: column; gap: 8px; }
+    .newsletter input, .newsletter button { min-height: 45px; }
+}
+</style>
 </head>
 
 <body>
 
-    <div class="announcement">
-        ✦ Moda com personalidade · Peças de R$ 25 a R$ 200 ✦
+<div class="announcement">
+    ✦ Moda com atitude · Peças de R$ 25 a R$ 200 ✦
+</div>
+
+<header>
+    <a class="logo" href="#">ALILES<span>MODAS.</span></a>
+
+    <nav>
+        <a href="#inicio">Início</a>
+        <a href="#colecao">Coleção</a>
+        <a href="#roupas">Roupas</a>
+        <a href="#acessorios">Acessórios</a>
+        <a href="#sobre">Sobre</a>
+    </nav>
+
+    <a href="#roupas">Sacola (<span id="cart-count">0</span>)</a>
+</header>
+
+<main>
+
+<section class="hero" id="inicio">
+    <div class="hero-content">
+        <span class="eyebrow">Rock girl · Y2K · Streetwear</span>
+
+        <h1>Moda que é <em>você.</em></h1>
+
+        <p>
+            Looks despojados, atitude de sobra e referências
+            dos anos 2000. Do oversized ao vermelho cereja,
+            vista seu estilo sem estourar o orçamento.
+        </p>
+
+        <a href="#roupas" class="button">Ver coleção ↗</a>
     </div>
 
-    <header>
-        <a href="#" class="logo">ALILES<span>MODAS.</span></a>
+    <div class="hero-image" role="img"
+         aria-label="Editorial de moda feminina urbana"></div>
+</section>
 
-        <nav>
-            <a href="#inicio">Início</a>
-            <a href="#colecao">Coleção</a>
-            <a href="#roupas">Roupas</a>
-            <a href="#acessorios">Acessórios</a>
-            <a href="#sobre">Nossa essência</a>
-        </nav>
+<div class="ticker">
+    SEU ESTILO, SUAS REGRAS ✦ TAMANHOS G E GG ✦ ROCK Y2K ✦ PREÇOS ACESSÍVEIS
+</div>
 
-        <div class="header-actions">
-            <a href="#roupas">♡ Favoritos</a>
-            <a href="#roupas" class="cart-link">Sacola (<span id="cart-count">0</span>)</a>
+<section id="colecao">
+    <div class="section-heading">
+        <span class="eyebrow">Encontre sua vibe</span>
+        <h2>Qual é o seu mood?</h2>
+        <p>Peças confortáveis para criar looks com personalidade.</p>
+    </div>
+
+    <div class="categories">
+        <a class="category" href="#roupas">
+            <img loading="lazy"
+              src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=800&q=85"
+              alt="Inspiração para looks casuais">
+            <div class="category-label">
+                <h3>Cherry Rock</h3>
+                <p>Vermelho cereja e atitude ↗</p>
+            </div>
+        </a>
+
+        <a class="category" href="#roupas">
+            <img loading="lazy"
+              src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=85"
+              alt="Inspiração de moda Y2K">
+            <div class="category-label">
+                <h3>Wild Side</h3>
+                <p>Oncinha e personalidade ↗</p>
+            </div>
+        </a>
+
+        <a class="category" href="#acessorios">
+            <img loading="lazy"
+              src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=800&q=85"
+              alt="Acessórios dourados">
+            <div class="category-label">
+                <h3>Golden Mood</h3>
+                <p>Detalhes dourados ↗</p>
+            </div>
+        </a>
+    </div>
+</section>
+
+<section class="products-section" id="roupas">
+    <div class="section-heading">
+        <span class="eyebrow">Sua próxima obsessão</span>
+        <h2>Peças desejo ♡</h2>
+        <p>Modelagens soltas, estilo urbano e preços acessíveis.</p>
+    </div>
+
+    <div class="filters">
+        <button class="filter-btn active" data-filter="todos">Todos</button>
+        <button class="filter-btn" data-filter="blusas">Blusas</button>
+        <button class="filter-btn" data-filter="calcas">Calças</button>
+        <button class="filter-btn" data-filter="terceiras">Terceiras peças</button>
+        <button class="filter-btn" data-filter="acessorios">Acessórios</button>
+    </div>
+
+    <div class="products">
+
+        <article class="product-card" data-category="blusas">
+            <div class="product-image">
+                <span class="tag">Best seller</span>
+                <img loading="lazy"
+                  src="https://images.unsplash.com/photo-1503341504253-dff4815485f1?auto=format&fit=crop&w=650&q=85"
+                  alt="Look casual feminino">
+            </div>
+            <div class="product-info">
+                <span class="product-category">Rock essentials</span>
+                <h3>Camiseta Oversized Rock</h3>
+                <p class="material">Algodão · Estampa gráfica</p>
+                <p class="sizes">Tamanhos: G / GG</p>
+                <p class="price">R$ 79,90</p>
+                <button class="buy" data-name="Camiseta Oversized Rock">ADICIONAR À SACOLA</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="blusas">
+            <div class="product-image">
+                <span class="tag">Cherry red</span>
+                <img loading="lazy"
+                  src="https://images.unsplash.com/photo-1551163943-3f6a855d1153?auto=format&fit=crop&w=650&q=85"
+                  alt="Blusa feminina">
+            </div>
+            <div class="product-info">
+                <span class="product-category">Cherry collection</span>
+                <h3>Blusa Vermelho Cereja</h3>
+                <p class="material">Malha confortável</p>
+                <p class="sizes">Tamanhos: G / GG</p>
+                <p class="price">R$ 59,90</p>
+                <button class="buy" data-name="Blusa Vermelho Cereja">ADICIONAR À SACOLA</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="blusas">
+            <div class="product-image">
+                <span class="tag">Wild print</span>
+                <img loading="lazy"
+                  src="https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?auto=format&fit=crop&w=650&q=85"
+                  alt="Inspiração de moda com estampas">
+            </div>
+            <div class="product-info">
+                <span class="product-category">Wild side</span>
+                <h3>Top Estampa Oncinha</h3>
+                <p class="material">Malha estampada</p>
+                <p class="sizes">Tamanhos: G / GG</p>
+                <p class="price">R$ 49,90</p>
+                <button class="buy" data-name="Top Estampa Oncinha">ADICIONAR À SACOLA</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="calcas">
+            <div class="product-image">
+                <img loading="lazy"
+                  src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=650&q=85"
+                  alt="Calça jeans casual">
+            </div>
+            <div class="product-info">
+                <span class="product-category">Streetwear</span>
+                <h3>Calça Wide Leg</h3>
+                <p class="material">Jeans · Modelagem ampla</p>
+                <p class="sizes">Tamanhos: G / GG</p>
+                <p class="price">R$ 129,90</p>
+                <button class="buy" data-name="Calça Wide Leg">ADICIONAR À SACOLA</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="terceiras">
+            <div class="product-image">
+                <span class="tag">Comfort fit</span>
+                <img loading="lazy"
+                  src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=650&q=85"
+                  alt="Jaqueta e sobreposição casual">
+            </div>
+            <div class="product-info">
+                <span class="product-category">Rock layers</span>
+                <h3>Jaqueta Urbana</h3>
+                <p class="material">Visual despojado</p>
+                <p class="sizes">Tamanhos: G / GG</p>
+                <p class="price">R$ 179,90</p>
+                <button class="buy" data-name="Jaqueta Urbana">ADICIONAR À SACOLA</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="terceiras">
+            <div class="product-image">
+                <img loading="lazy"
+                  src="https://images.unsplash.com/photo-1578681994506-b8f463449011?auto=format&fit=crop&w=650&q=85"
+                  alt="Camisa ampla de inspiração casual">
+            </div>
+            <div class="product-info">
+                <span class="product-category">Easy attitude</span>
+                <h3>Camisa Ampla</h3>
+                <p class="material">Linho misto · Caimento solto</p>
+                <p class="sizes">Tamanhos: G / GG</p>
+                <p class="price">R$ 99,90</p>
+                <button class="buy" data-name="Camisa Ampla">ADICIONAR À SACOLA</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="acessorios" id="acessorios">
+            <div class="product-image">
+                <img loading="lazy"
+                  src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=650&q=85"
+                  alt="Joias douradas">
+            </div>
+            <div class="product-info">
+                <span class="product-category">Golden details</span>
+                <h3>Argolas Douradas</h3>
+                <p class="material">Acessório folheado a ouro</p>
+                <p class="sizes">Tamanho único</p>
+                <p class="price">R$ 39,90</p>
+                <button class="buy" data-name="Argolas Douradas">ADICIONAR À SACOLA</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="acessorios">
+            <div class="product-image">
+                <img loading="lazy"
+                  src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=650&q=85"
+                  alt="Bolsa feminina">
+            </div>
+            <div class="product-info">
+                <span class="product-category">Y2K accessories</span>
+                <h3>Bolsa Cherry</h3>
+                <p class="material">Bolsa urbana vermelha</p>
+                <p class="sizes">Tamanho único</p>
+                <p class="price">R$ 89,90</p>
+                <button class="buy" data-name="Bolsa Cherry">ADICIONAR À SACOLA</button>
+            </div>
+        </article>
+
+    </div>
+</section>
+
+<section class="banner" id="sobre">
+    <img loading="lazy"
+      src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1000&q=85"
+      alt="Editorial de moda urbana">
+
+    <div class="banner-content">
+        <span class="eyebrow" style="color:#ffd3d9">Aliles modas apresenta</span>
+        <h2>Seu estilo não tem regras.</h2>
+        <p>
+            Do jeans largo à camiseta oversized, do vermelho cereja
+            aos acessórios dourados. Monte combinações que tenham
+            a sua personalidade sem gastar uma fortuna.
+        </p>
+        <a href="#roupas" class="button">Encontrar meu look ↗</a>
+    </div>
+</section>
+
+<section>
+    <div class="section-heading">
+        <span class="eyebrow">Nosso compromisso</span>
+        <h2>Conforto com atitude.</h2>
+    </div>
+
+    <div class="qualities">
+        <div class="quality">
+            <div class="symbol">✦</div>
+            <h3>Caimento solto</h3>
+            <p>Looks despojados com opções G e GG.</p>
         </div>
-    </header>
-
-    <main>
-
-        <!-- CAPA -->
-        <section class="hero" id="inicio">
-            <div class="hero-content">
-                <span class="eyebrow">Your style, your rules ✦</span>
-
-                <h1>Too glam<br>to give a <em>damn.</em></h1>
-
-                <p>
-                    A estética dos anos 2000 encontra a qualidade que você merece.
-                    Silhuetas marcantes, tecidos especiais e acessórios dourados
-                    para transformar qualquer look.
-                </p>
-
-                <a href="#roupas" class="button-primary">Descubra a coleção ↗</a>
-            </div>
-
-            <div class="hero-image" role="img" aria-label="Inspiração de moda feminina contemporânea">
-                <div class="hero-sticker">
-                    <span>MADE FOR</span>
-                    <strong>YOU ♡</strong>
-                    <span>EST. 2026</span>
-                </div>
-            </div>
-        </section>
-
-        <div class="ticker">
-            MAIN CHARACTER ENERGY
-            <span>✦</span>
-            QUALIDADE SEM EXAGERAR NO PREÇO
-            <span>✦</span>
-            YOUR Y2K ERA STARTS HERE
+        <div class="quality">
+            <div class="symbol">♡</div>
+            <h3>Estilo autêntico</h3>
+            <p>Referências rock, Y2K e streetwear.</p>
         </div>
+        <div class="quality">
+            <div class="symbol">✧</div>
+            <h3>Detalhes dourados</h3>
+            <p>Acessórios para completar seu visual.</p>
+        </div>
+        <div class="quality">
+            <div class="symbol">★</div>
+            <h3>Preço acessível</h3>
+            <p>Uma vitrine com peças de R$ 25 a R$ 200.</p>
+        </div>
+    </div>
+</section>
 
-        <!-- CATEGORIAS -->
-        <section class="section" id="colecao">
-            <div class="section-heading">
-                <div>
-                    <span class="eyebrow">Encontre sua vibe</span>
-                    <h2>Qual é o seu mood?</h2>
-                    <p>Peças para todas as versões de você.</p>
-                </div>
-                <a href="#roupas" class="text-link">Ver tudo ↗</a>
-            </div>
+<section class="newsletter">
+    <h2>Entre para o lado rock ♡</h2>
+    <p>Receba novidades e inspirações da Aliles Modas.</p>
+    <form id="newsletter-form">
+        <input type="email" placeholder="Seu melhor e-mail" required>
+        <button type="submit">Quero receber</button>
+    </form>
+</section>
 
-            <div class="categories">
-                <a href="#roupas" class="category-card">
-                    <img
-                        src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=800&q=80"
-                        alt="Inspiração de looks femininos"
-                        loading="lazy"
-                    >
-                    <div class="category-label">
-                        <h3>Cherry Girl</h3>
-                        <p>Vermelho, atitude e paixão ↗</p>
-                    </div>
-                </a>
+</main>
 
-                <a href="#roupas" class="category-card">
-                    <img
-                        src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=80"
-                        alt="Moda feminina elegante"
-                        loading="lazy"
-                    >
-                    <div class="category-label">
-                        <h3>Wild Side</h3>
-                        <p>Oncinha nunca é demais ↗</p>
-                    </div>
-                </a>
+<footer>
+    <a class="logo" href="#" style="color:white">
+        ALILES<span>MODAS.</span>
+    </a>
+    <p>Seu estilo, suas regras.</p>
+    <p>Rock Y2K · Vermelho cereja · Moda acessível</p>
+    <p>© 2026 Aliles Modas. Todos os direitos reservados.</p>
+</footer>
 
-                <a href="#acessorios" class="category-card">
-                    <img
-                        src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=800&q=80"
-                        alt="Acessórios dourados femininos"
-                        loading="lazy"
-                    >
-                    <div class="category-label">
-                        <h3>Golden Hour</h3>
-                        <p>O detalhe que muda tudo ↗</p>
-                    </div>
-                </a>
-            </div>
-        </section>
+<div id="cart-message" role="status"></div>
 
-        <!-- VITRINE -->
-        <section class="section products-section" id="roupas">
-            <div class="section-heading">
-                <div>
-                    <span class="eyebrow">Your next obsession</span>
-                    <h2>Peças desejo ♡</h2>
-                    <p>Estilo, qualidade e preços que fazem sentido.</p>
-                </div>
-            </div>
+<script>
+let cartCount = 0;
 
-            <div class="filters">
-                <button class="filter-btn active" data-filter="todos">Todos</button>
-                <button class="filter-btn" data-filter="blusas">Blusas</button>
-                <button class="filter-btn" data-filter="vestidos">Vestidos</button>
-                <button class="filter-btn" data-filter="saias">Saias</button>
-                <button class="filter-btn" data-filter="acessorios">Acessórios</button>
-            </div>
+const cartDisplay = document.getElementById('cart-count');
+const message = document.getElementById('cart-message');
 
-            <div class="products">
+document.querySelectorAll('.buy').forEach(button => {
+    button.addEventListener('click', () => {
+        cartCount++;
+        cartDisplay.textContent = cartCount;
 
-                <article class="product-card" data-category="blusas">
-                    <div class="product-image">
-                        <span class="product-tag">Best seller</span>
-                        <img
-                            src="https://images.unsplash.com/photo-1551163943-3f6a855d1153?auto=format&fit=crop&w=650&q=80"
-                            alt="Blusa preta feminina"
-                            loading="lazy"
-                        >
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category">Essenciais</span>
-                        <h3>Baby Tee Essential</h3>
-                        <p
+        message.textContent =
+            button.dataset.name + ' adicionada à sacola!';
+
+        message.style.display = 'block';
+
+        setTimeout(() => {
+            message.style.display = 'none';
+        }, 2200);
+    });
+});
+
+document.querySelectorAll('.filter-btn').forEach(button => {
+    button.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(item => {
+            item.classList.remove('active');
+        });
+
+        button.classList.add('active');
+
+        const filter = button.dataset.filter;
+
+        document.querySelectorAll('.product-card').forEach(card => {
+            card.style.display =
+                filter === 'todos' ||
+                card.dataset.category === filter
+                ? '' : 'none';
+        });
+    });
+});
+
+document.getElementById('newsletter-form')
+.addEventListener('submit', event => {
+    event.preventDefault();
+    alert('Obrigada pelo interesse na Aliles Modas!');
+});
+</script>
+
+</body>
+</html>
