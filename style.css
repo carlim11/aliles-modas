@@ -1,0 +1,288 @@
+/* =========================================
+   CHERRY CLUB — Y2K GOTHIC / PINK & BLACK
+   ========================================= */
+
+:root {
+    --black: #0b080c;
+    --black-soft: #171019;
+    --black-card: #211722;
+    --pink: #ff4fa3;
+    --pink-hot: #ff168b;
+    --pink-light: #ffc1df;
+    --pink-pale: #ffe6f2;
+    --white: #fff7fc;
+    --gray: #b7a8b5;
+    --silver: #d9cedb;
+    --border: #503044;
+    --cherry: #ff168b;
+    --red: #ff168b;
+    --cream: #100b12;
+    --gold: #e5b7ce;
+}
+
+/* RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    background-color: var(--black);
+    color: var(--white);
+    font-family: "DM Sans", Arial, sans-serif;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* TEXTURA GÓTICA NO FUNDO */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 100;
+    opacity: 0.12;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.17'/%3E%3C/svg%3E");
+}
+
+::selection {
+    background: var(--pink);
+    color: var(--black);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* SCROLLBAR PERSONALIZADA */
+
+::-webkit-scrollbar {
+    width: 9px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--black);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--pink);
+    border: 2px solid var(--black);
+    border-radius: 10px;
+}
+
+/* BARRA PROMOCIONAL */
+
+.announcement {
+    background: var(--pink);
+    color: var(--black);
+    padding: 10px 15px;
+    text-align: center;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    border-bottom: 2px solid var(--black);
+}
+
+/* CABEÇALHO */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    padding: 20px 6%;
+    background: rgba(11, 8, 12, 0.94);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25);
+}
+
+.logo {
+    color: var(--white);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: -2px;
+    white-space: nowrap;
+    text-shadow: 2px 2px 0 var(--pink);
+}
+
+.logo span {
+    color: var(--pink);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+nav a {
+    position: relative;
+    color: var(--silver);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: color 0.25s ease;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+    width: 0;
+    height: 2px;
+    background: var(--pink);
+    transition: width 0.25s ease;
+}
+
+nav a:hover {
+    color: var(--pink);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 11px;
+}
+
+.header-actions a:first-child {
+    color: var(--pink-light);
+}
+
+.cart-link {
+    padding: 10px 15px;
+    border: 1px solid var(--pink);
+    border-radius: 0;
+    color: var(--pink) !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.25s;
+}
+
+.cart-link:hover {
+    color: var(--black) !important;
+    background: var(--pink);
+    box-shadow: 0 0 20px rgba(255, 79, 163, 0.3);
+}
+
+/* CAPA PRINCIPAL */
+
+.hero {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 580px;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            ellipse at 10% 80%,
+            rgba(255, 22, 139, 0.13),
+            transparent 55%
+        ),
+        var(--black);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 75px 10%;
+}
+
+.eyebrow {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: var(--pink);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    color: var(--white);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(45px, 6vw, 82px);
+    font-weight: 500;
+    line-height: 0.98;
+    letter-spacing: -3px;
+    margin-bottom: 27px;
+    text-shadow: 3px 3px 0 rgba(255, 79, 163, 0.16);
+}
+
+.hero h1 em {
+    color: var(--pink);
+    font-weight: 500;
+    text-shadow: 0 0 30px rgba(255, 79, 163, 0.2);
+}
+
+.hero p {
+    max-width: 390px;
+    margin-bottom: 32px;
+    color: var(--gray);
+    font-size: 13px;
+    line-height: 2;
+}
+
+.hero-image {
+    position: relative;
+    min-height: 500px;
+    background:
+        linear-gradient(
+            90deg,
+            var(--black) 0%,
+            rgba(11, 8, 12, 0.1) 40%,
+            rgba(11, 8, 12, 0.05) 100%
+        ),
+        url("https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1200&q=85")
+        center 35% / cover;
+    filter: saturate(0.78);
+}
+
+.hero-image::after {
+    content: "♡";
+    position: absolute;
+    top: 12%;
+    right: 12%;
+    color: var(--pink);
+    font-size: 65px;
+    transform: rotate(15deg);
+    text-shadow:
